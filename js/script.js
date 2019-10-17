@@ -1,9 +1,10 @@
-var computerMove;
-computerMove = 'kamień';
-var playerMove;
-playerMove = 'papier'
-printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to ' + playerMove + ', to wygrywasz!');
 var randomNumber;
 randomNumber = Math.floor(Math.random() * 3  + 1);
-printMessage('Wylosowana liczba to: ' + randomNumber);
 
+if (randomNumber==1) {
+    printMessage('kamień');
+} else if (randomNumber==2) {
+    printMessage('papier');
+} else {
+    printMessage('nożyce');
+}
