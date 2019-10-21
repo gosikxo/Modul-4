@@ -8,6 +8,9 @@ $pico-pink: #fd79a8;
   font-size: 24px;
   font-weight: 700;
   font-family: "Orbitron", sans-serif;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 }
 
 *,
@@ -18,28 +21,48 @@ $pico-pink: #fd79a8;
 
 body {
   margin: 0;
+  margin-bottom: 300px;
   font-size: 30px;
   font-weight: 400;
   line-height: 1.7;
   font-family: "Orbitron", sans-serif;
   background: #60a3bc;
+  overflow-x: hidden;
 }
 
 .navigation {
-  width: 75%;
-  height: 700px;
   background-image: url("https://i.postimg.cc/8P23c6bb/erik-mclean-C3-T8-KTZx-TFM-unsplash.jpg");
   background-repeat: no-repeat;
   margin: 0 auto;
   border-radius: 15%;
+  background-size: contain;
+  
+  @media (max-width: 600px) {
+    width: 70%;
+    height: 200px;
+    background-position: top;
+  }
+  
+  @media (min-width: 601px) {
+    width: 75%;
+    height: 500px;
+    background-position: top;
+  }
+
+  @media (min-width: 1025px) {
+      background-size: auto;
+      width: 75%;
+      height: 700px;
+    &:hover {
+        border-radius: 0;
+        box-shadow: 2px 7px 5px 6px rgba(0, 0, 0, 0.08);
+    }
+  }
+
   h1 {
     color: $very-pink;
     text-align: center;
     margin-top: 0;
-  }
-  &:hover {
-    border-radius: 0;
-    box-shadow: 2px 7px 5px 6px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -47,14 +70,19 @@ body {
   h2 {
     text-align: center;
   }
-  #messages {
+  #messages,
+  #results {
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 12px;
+    }
   }
   #buttons {
     display: flex;
     justify-content: center;
     text-align: center;
     margin: 40px;
+
     #button-rock {
       border-color: blue;
       @include font-button();
@@ -81,10 +109,10 @@ body {
         filter: blur(3px);
         opacity: 0.5;
         transform: scale(0.98);
-      }
 
-      button {
-        margin: 40px;
+        @media (min-width: 700px) {
+          margin: 40px;
+        }
         &:hover {
           transform: scale(1);
           filter: blur(0px);
@@ -101,6 +129,11 @@ body {
       width: 400px;
       height: 200px;
       background-color: inherit;
+      @media (max-width: 600px) {
+        width: 90px;
+        height: 45px;
+        margin: 8px;
+      }
     }
   }
 }

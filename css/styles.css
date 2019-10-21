@@ -6,20 +6,49 @@
 
 body {
   margin: 0;
+  margin-bottom: 300px;
   font-size: 30px;
   font-weight: 400;
   line-height: 1.7;
   font-family: "Orbitron", sans-serif;
   background: #60a3bc;
+  overflow-x: hidden;
 }
 
 .navigation {
-  width: 75%;
-  height: 700px;
   background-image: url("https://i.postimg.cc/8P23c6bb/erik-mclean-C3-T8-KTZx-TFM-unsplash.jpg");
   background-repeat: no-repeat;
   margin: 0 auto;
   border-radius: 15%;
+  background-size: contain;
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    width: 70%;
+    height: 200px;
+    background-position: top;
+  }
+}
+
+@media (min-width: 601px) {
+  .navigation {
+    width: 75%;
+    height: 500px;
+    background-position: top;
+  }
+}
+
+@media (min-width: 1025px) {
+  .navigation {
+    background-size: auto;
+    width: 75%;
+    height: 700px;
+  }
+  .navigation:hover {
+    border-radius: 0;
+    box-shadow: 2px 7px 5px 6px rgba(0, 0, 0, 0.08);
+  }
 }
 
 .navigation h1 {
@@ -28,17 +57,20 @@ body {
   margin-top: 0;
 }
 
-.navigation:hover {
-  border-radius: 0;
-  box-shadow: 2px 7px 5px 6px rgba(0, 0, 0, 0.08);
-}
-
 .container h2 {
   text-align: center;
 }
 
-.container #messages {
+.container #messages,
+.container #results {
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  .container #messages,
+  .container #results {
+    font-size: 12px;
+  }
 }
 
 .container #buttons {
@@ -57,6 +89,12 @@ body {
   font-family: "Orbitron", sans-serif;
 }
 
+@media (max-width: 600px) {
+  .container #buttons #button-rock {
+    font-size: 14px;
+  }
+}
+
 .container #buttons #button-rock:hover {
   background-color: #74b9ff;
 }
@@ -66,6 +104,12 @@ body {
   font-size: 24px;
   font-weight: 700;
   font-family: "Orbitron", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .container #buttons #button-paper {
+    font-size: 14px;
+  }
 }
 
 .container #buttons #button-paper:hover {
@@ -79,6 +123,12 @@ body {
   font-family: "Orbitron", sans-serif;
 }
 
+@media (max-width: 600px) {
+  .container #buttons #button-scissors {
+    font-size: 14px;
+  }
+}
+
 .container #buttons #button-scissors:hover {
   background-color: #ffeaa7;
 }
@@ -89,8 +139,10 @@ body {
   transform: scale(0.98);
 }
 
-.container #buttons:hover button {
-  margin: 40px;
+@media (min-width: 700px) {
+  .container #buttons:hover button {
+    margin: 40px;
+  }
 }
 
 .container #buttons:hover button:hover {
@@ -108,5 +160,13 @@ body {
   width: 400px;
   height: 200px;
   background-color: inherit;
+}
+
+@media (max-width: 600px) {
+  .container #buttons button {
+    width: 90px;
+    height: 45px;
+    margin: 8px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
