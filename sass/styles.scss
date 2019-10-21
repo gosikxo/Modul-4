@@ -1,0 +1,106 @@
+$very-pink: #e84393;
+$pink-glamour: #ff7675;
+$light-blue: #74b9ff;
+$light-yellow: #ffeaa7;
+$pico-pink: #fd79a8;
+
+@mixin font-button {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.7;
+  font-family: "Orbitron", sans-serif;
+  background: #60a3bc;
+}
+
+.navigation {
+  width: 75%;
+  height: 700px;
+  background-image: url("https://i.postimg.cc/8P23c6bb/erik-mclean-C3-T8-KTZx-TFM-unsplash.jpg");
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  border-radius: 15%;
+  h1 {
+    color: $very-pink;
+    text-align: center;
+    margin-top: 0;
+  }
+  &:hover {
+    border-radius: 0;
+    box-shadow: 2px 7px 5px 6px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.container {
+    h2 {
+        text-align: center;
+    }
+    #messages {
+        text-align: center;
+    }
+  #buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 40px;
+    #button-rock {
+      border-color: blue;
+      @include font-button();
+      &:hover {
+        background-color: $light-blue;
+      }
+    }
+    #button-paper {
+      border-color: red;
+      @include font-button();
+      &:hover {
+        background-color: $pink-glamour;
+      }
+    }
+    #button-scissors {
+      border-color: yellow;
+      @include font-button(); 
+      &:hover {
+        background-color: $light-yellow;
+      }
+    }
+    &:hover {
+      button {
+        filter: blur(3px);
+        opacity: 0.5;
+        transform: scale(0.98);
+      }
+    
+      button {
+        margin: 40px;
+        &:hover {
+          transform: scale(1);
+          filter: blur(0px);
+          opacity: 1;
+          box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+        }
+      }
+    }
+    button {
+      border: 2px solid;
+      cursor: pointer;
+      transition: 1s all;
+      margin: 20px;
+      width: 400px;
+      height: 200px;
+      background-color: inherit;
+  }
+}
+}

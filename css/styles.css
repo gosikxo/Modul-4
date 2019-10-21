@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.7;
+  font-family: "Orbitron", sans-serif;
+  background: #60a3bc;
+}
+
+.navigation {
+  width: 75%;
+  height: 700px;
+  background-image: url("https://i.postimg.cc/8P23c6bb/erik-mclean-C3-T8-KTZx-TFM-unsplash.jpg");
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  border-radius: 15%;
+}
+
+.navigation h1 {
+  color: #e84393;
+  text-align: center;
+  margin-top: 0;
+}
+
+.navigation:hover {
+  border-radius: 0;
+  box-shadow: 2px 7px 5px 6px rgba(0, 0, 0, 0.08);
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.container #messages {
+  text-align: center;
+}
+
+.container #buttons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: center;
+  margin: 40px;
+}
+
+.container #buttons #button-rock {
+  border-color: blue;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+}
+
+.container #buttons #button-rock:hover {
+  background-color: #74b9ff;
+}
+
+.container #buttons #button-paper {
+  border-color: red;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+}
+
+.container #buttons #button-paper:hover {
+  background-color: #ff7675;
+}
+
+.container #buttons #button-scissors {
+  border-color: yellow;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+}
+
+.container #buttons #button-scissors:hover {
+  background-color: #ffeaa7;
+}
+
+.container #buttons:hover button {
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+.container #buttons:hover button {
+  margin: 40px;
+}
+
+.container #buttons:hover button:hover {
+  transform: scale(1);
+  filter: blur(0px);
+  opacity: 1;
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+}
+
+.container #buttons button {
+  border: 2px solid;
+  cursor: pointer;
+  transition: 1s all;
+  margin: 20px;
+  width: 400px;
+  height: 200px;
+  background-color: inherit;
+}
+/*# sourceMappingURL=styles.css.map */

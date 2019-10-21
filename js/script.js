@@ -3,11 +3,11 @@ var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomN
 function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
     if (argMoveId == 1) {
-        return 'kamień';
+        return 'rock';
     } else if (argMoveId == 2) {
-        return 'papier';
+        return 'paper';
     } else if (argMoveId == 3) {
-        return 'nożyce';
+        return 'scissors';
     } else {
         printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
         return 'kamień';
@@ -16,20 +16,22 @@ function getMoveName(argMoveId) {
 
 function displayResult(argPlayerMove, argComputerMove) {
     console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-    if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
-        printMessage('Wygrywasz!');
-    } else if (argPlayerMove === 'nożyce' && argComputerMove == 'papier') {
-        printMessage('Wygrywasz!');
-    } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
-        printMessage('Wyrgywasz!');
+    if (argPlayerMove == 'paper' && argComputerMove == 'rock') {
+        printMessage('You win!');
+    } else if (argPlayerMove === 'scissors' && argComputerMove == 'paper') {
+        printMessage('You win!');
+    } else if (argPlayerMove == 'rock' && argComputerMove == 'scissors') {
+        printMessage('You win!');
     } else if (argPlayerMove == argComputerMove) {
-        printMessage('Remis');
+        printMessage("It's a tie");
     }
     else {
-        printMessage('Przegrywasz :(');
+        printMessage('You lose :(');
     }
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    printMessage('I played ' + argComputerMove + ' and you played ' + argPlayerMove);
 }
+
+
 
 function buttonClicked(argButtonName) {
     clearMessages();
@@ -43,7 +45,7 @@ function buttonClicked(argButtonName) {
     console.log(argButtonName + ' został kliknięty');
 }
 
-document.getElementById('button-rock').addEventListener('click', function() { buttonClicked(1) })
-document.getElementById('button-paper').addEventListener('click', function() { buttonClicked(2) })
-document.getElementById('button-scissors').addEventListener('click', function() { buttonClicked(3) })
+document.getElementById('button-rock').addEventListener('click', function () { buttonClicked(1) })
+document.getElementById('button-paper').addEventListener('click', function () { buttonClicked(2) })
+document.getElementById('button-scissors').addEventListener('click', function () { buttonClicked(3) })
 
