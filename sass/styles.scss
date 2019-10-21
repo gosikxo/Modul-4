@@ -44,12 +44,12 @@ body {
 }
 
 .container {
-    h2 {
-        text-align: center;
-    }
-    #messages {
-        text-align: center;
-    }
+  h2 {
+    text-align: center;
+  }
+  #messages {
+    text-align: center;
+  }
   #buttons {
     display: flex;
     justify-content: center;
@@ -71,7 +71,7 @@ body {
     }
     #button-scissors {
       border-color: yellow;
-      @include font-button(); 
+      @include font-button();
       &:hover {
         background-color: $light-yellow;
       }
@@ -82,7 +82,7 @@ body {
         opacity: 0.5;
         transform: scale(0.98);
       }
-    
+
       button {
         margin: 40px;
         &:hover {
@@ -101,6 +101,6 @@ body {
       width: 400px;
       height: 200px;
       background-color: inherit;
+    }
   }
-}
 }

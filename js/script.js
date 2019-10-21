@@ -1,4 +1,4 @@
-var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+var playerWins = 0, computerWins = 0;
 
 function getMoveName(argMoveId) {
     console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -14,35 +14,61 @@ function getMoveName(argMoveId) {
     }
 }
 
-function displayResult(argPlayerMove, argComputerMove) {
-    console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-    if (argPlayerMove == 'paper' && argComputerMove == 'rock') {
-        printMessage('You win!');
-    } else if (argPlayerMove === 'scissors' && argComputerMove == 'paper') {
-        printMessage('You win!');
-    } else if (argPlayerMove == 'rock' && argComputerMove == 'scissors') {
-        printMessage('You win!');
-    } else if (argPlayerMove == argComputerMove) {
-        printMessage("It's a tie");
+function displayResult(result, computerMove, playerMove) {
+    switch(result) {
+        case 'player':
+            printMessage('You win!');
+            break;
+        case 'computer': 
+            printMessage('You lose :(');
+            break;
+        case 'tie':
+            printMessage("It's a tie");
+            break;
     }
-    else {
-        printMessage('You lose :(');
+    printMessage('I played ' + computerMove + ' and you played ' + playerMove);
+}
+
+function getResult(playerMove, computerMove) {
+    if (playerMove == 'paper' && computerMove == 'rock') {
+        return 'player';
+    } else if (playerMove === 'scissors' && computerMove == 'paper') {
+        return 'player';
+    } else if (playerMove == 'rock' && computerMove == 'scissors') {
+        return 'player';
+    } else if (playerMove == computerMove) {
+        return 'tie';
+    } else {
+        return 'computer';
     }
-    printMessage('I played ' + argComputerMove + ' and you played ' + argPlayerMove);
 }
 
 
 
-function buttonClicked(argButtonName) {
+function buttonClicked(buttonOfChoice) {
     clearMessages();
-    playerMove = getMoveName(argButtonName);
-    console.log('ruch gracza to: ' + playerMove);
-    randomNumber = Math.floor(Math.random() * 3 + 1);
-    console.log('wylosowana liczba to: ' + randomNumber);
-    computerMove = getMoveName(randomNumber);
-    console.log('ruch komputera to: ' + computerMove);
-    displayResult(playerMove, computerMove);
-    console.log(argButtonName + ' został kliknięty');
+    var playerMove = getMoveName(buttonOfChoice);
+    var randomNumber = Math.floor(Math.random() * 3 + 1);
+    var computerMove = getMoveName(randomNumber);
+    var result = getResult(playerMove, computerMove);
+    changeScore(result);
+    displayResult(result, computerMove, playerMove);
+    printScore('Player: ' +playerWins + ' - Computer: ' + computerWins);
+}
+
+function printScore(score) {
+    document.getElementById('results').innerText = score;
+}
+
+function changeScore(whoWon) {
+    if (whoWon === 'computer') {
+        // computerWins = computerWins + 1
+        computerWins += 1;
+    }
+
+    if (whoWon === 'player') {
+        playerWins += 1;
+    }
 }
 
 document.getElementById('button-rock').addEventListener('click', function () { buttonClicked(1) })
