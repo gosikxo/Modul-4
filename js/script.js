@@ -1,7 +1,6 @@
-var playerWins = 0, computerWins = 0;
+let playerWins = 0, computerWins = 0;
 
 function getMoveName(argMoveId) {
-    console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
     if (argMoveId == 1) {
         return 'rock';
     } else if (argMoveId == 2) {
@@ -47,13 +46,15 @@ function getResult(playerMove, computerMove) {
 
 function buttonClicked(buttonOfChoice) {
     clearMessages();
-    var playerMove = getMoveName(buttonOfChoice);
-    var randomNumber = Math.floor(Math.random() * 3 + 1);
-    var computerMove = getMoveName(randomNumber);
-    var result = getResult(playerMove, computerMove);
+    
+    const playerMove = getMoveName(buttonOfChoice);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    const computerMove = getMoveName(randomNumber);
+    const result = getResult(playerMove, computerMove);
+    
     changeScore(result);
     displayResult(result, computerMove, playerMove);
-    printScore('Player: ' +playerWins + ' - Computer: ' + computerWins);
+    printScore('Player: ' + playerWins + ' - Computer: ' + computerWins);
 }
 
 function printScore(score) {
@@ -62,7 +63,6 @@ function printScore(score) {
 
 function changeScore(whoWon) {
     if (whoWon === 'computer') {
-        // computerWins = computerWins + 1
         computerWins += 1;
     }
 
