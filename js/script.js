@@ -1,11 +1,11 @@
 let playerWins = 0, computerWins = 0;
 
 function getMoveName(argMoveId) {
-    if (argMoveId == 1) {
+    if (argMoveId === 1) {
         return 'rock';
-    } else if (argMoveId == 2) {
+    } else if (argMoveId === 2) {
         return 'paper';
-    } else if (argMoveId == 3) {
+    } else if (argMoveId === 3) {
         return 'scissors';
     } else {
         printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
@@ -29,13 +29,13 @@ function displayResult(result, computerMove, playerMove) {
 }
 
 function getResult(playerMove, computerMove) {
-    if (playerMove == 'paper' && computerMove == 'rock') {
+    if (playerMove === 'paper' && computerMove === 'rock') {
         return 'player';
-    } else if (playerMove === 'scissors' && computerMove == 'paper') {
+    } else if (playerMove === 'scissors' && computerMove === 'paper') {
         return 'player';
-    } else if (playerMove == 'rock' && computerMove == 'scissors') {
+    } else if (playerMove === 'rock' && computerMove === 'scissors') {
         return 'player';
-    } else if (playerMove == computerMove) {
+    } else if (playerMove === computerMove) {
         return 'tie';
     } else {
         return 'computer';
